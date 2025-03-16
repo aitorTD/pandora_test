@@ -16,7 +16,7 @@ def secuencial(photos):
     all_pics = requests.get(url_pics)
     all_albums = requests.get(url_albums)
     if all_pics.status_code == 200 and all_albums.status_code == 200:
-        print("Success reciving data")
+        print("Success receiving data")
         all_pics = all_pics.json()
         all_albums = all_albums.json()
         album_dict = {album["id"]: album["title"] for album in all_albums}
