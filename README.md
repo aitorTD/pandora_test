@@ -1,21 +1,20 @@
-# pandora_test
 <h1>Pandora FMS technical test</h1>
 
-<h2>Required packages</h2>
+<h2>Paquetes requeridos</h2>
 
 <ul>
 <li>Click</li>
 <li>Requests</li>
 </ul>
 
-<h2>How to install</h2>
+<h2>Cómo instalar</h2>
 1. Clonar el repositorio de GitHub: <br>
 <code>git clone https://github.com/aitorTD/pandora_test.git</code>
 <br><br>
 2. Instalar los paquetes requeridos:<br>
 <code>pip install -r requirements.txt</code>
 
-<h2>How to execute</h2>
+<h2>Cómo ejecutar</h2>
 <code>python cli.py --mode modo --photos número_de_fotos </code>
 <br><br>
 Donde <code>modo</code> puede ser:
