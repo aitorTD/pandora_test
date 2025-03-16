@@ -21,7 +21,7 @@ def mode(ctx, mode, photos):
         elif mode == "multiprocesos":
             pass
             # print("Ejecutando modo multiprocesos")
-            # functions.multiprocesos(photos)
+            functions.multiprocesos(photos)
         elif mode == None or mode == "": # If there's no mode selected, execute all modes
             # print(f"Ejecutando todos los modos, numero de fotos es {photos}")
             functions.secuencial(photos)

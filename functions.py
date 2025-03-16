@@ -2,6 +2,7 @@ import requests
 import time
 import os
 import threading
+import multiprocessing
 
 url_pics = "https://jsonplaceholder.typicode.com/photos/"
 url_albums = "https://jsonplaceholder.typicode.com/albums/"
@@ -112,4 +113,42 @@ def multihilo(photos):
 def multiprocesos(photos):
     start_time = time.time()
     print("Modo de ejecucion: Multiprocesos")
+    
+    functions = [get_pics, get_albums]
+    
+    with multiprocessing.Pool(processes=2) as pool:
+        results = pool.map(run_function, functions)
+    
+    
+    all_pics, all_albums = results
+    
+    if all_pics and all_albums:
+        # print("Success reciving data")
+        album_dict = {album["id"]: album["title"] for album in all_albums}
+        if photos == "all":
+            for pic in all_pics:
+                print(f"Pic ID: {pic['id']}")
+                print(f"Title: {pic['title'].title()}")
+                print(f"URL: {pic['url']}")
+                print(f"Album ID: {pic['albumId']}")
+                print(f"Album Title: {album_dict[pic['albumId']]}")
+                print("------------------------------------------")
+        else:
+            photos = int(photos)
+            pics = all_pics[:photos]
+            for pic in pics:
+                print(f"Pic ID: {pic['id']}")
+                print(f"Title: {pic['title'].title()}")
+                print(f"URL: {pic['url']}")
+                print(f"Album ID: {pic['albumId']}")
+                print(f"Album Title: {album_dict[pic['albumId']]}")
+                print("------------------------------------------")
+        end_time = time.time()
+        print(f"Time taken: {end_time - start_time:.2f} seconds")
+    else:
+        print("Error receiving data")
+    
+
+def run_function(func):
+        return func()
 
