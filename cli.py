@@ -17,13 +17,13 @@ def mode(ctx, mode, photos):
         elif mode == "multihilo":
             pass
             # print("Ejecutando modo multihilo")
-            # functions.multihilo(photos)
+            functions.multihilo(photos)
         elif mode == "multiprocesos":
             pass
             # print("Ejecutando modo multiprocesos")
             # functions.multiprocesos(photos)
         elif mode == None or mode == "": # If there's no mode selected, execute all modes
-            print(f"Ejecutando todos los modos, numero de fotos es {photos}")
+            # print(f"Ejecutando todos los modos, numero de fotos es {photos}")
             functions.secuencial(photos)
             functions.multihilo(photos)
             functions.multiprocesos(photos)
