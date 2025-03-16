@@ -3,8 +3,8 @@ import os
 import functions
 
 @click.command()
-@click.option("--mode", "-m", type=str, default="", help="Modos disponibles: secuencial | multihilo | multiprocesos", is_flag=False, flag_value="")
-@click.option("--photos", "-p", type=int, help="Número de fotos", is_flag=False, flag_value="")
+@click.option("--mode", "-m", type=str, default=None, help="Modos disponibles: secuencial | multihilo | multiprocesos", is_flag=False, flag_value="")
+@click.option("--photos", "-p" , default=None, help="Número de fotos", is_flag=False, flag_value="all")
 @click.pass_context
 def mode(ctx, mode, photos):
     # Error shown if the user enters something that is not on the list
@@ -12,13 +12,15 @@ def mode(ctx, mode, photos):
         ctx.fail("Debe seleccionar un modo de ejecución válido")
     else:
         if mode == "secuencial":
-            print("Ejecutando modo secuencial")
+            # print("Ejecutando modo secuencial")
             functions.secuencial(photos)
         elif mode == "multihilo":
-            print("Ejecutando modo multihilo")
+            pass
+            # print("Ejecutando modo multihilo")
             # functions.multihilo(photos)
         elif mode == "multiprocesos":
-            print("Ejecutando modo multiprocesos")
+            pass
+            # print("Ejecutando modo multiprocesos")
             # functions.multiprocesos(photos)
         elif mode == None or mode == "": # If there's no mode selected, execute all modes
             print(f"Ejecutando todos los modos, numero de fotos es {photos}")
