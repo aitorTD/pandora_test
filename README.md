@@ -1,39 +1,47 @@
 <h1>Pandora FMS technical test</h1>
 
-<h2>Paquetes requeridos</h2>
+<h2>Purpose</h2>
+<p>This is a Python CLI application that downloads and displays photos from JSONPlaceholder API. It supports three different execution modes:</p>
+<ul>
+<li>Sequential - Processes photos one by one</li>
+<li>Multithreaded - Uses threads for parallel processing</li>
+<li>Multiprocess - Uses separate processes for maximum performance</li>
+</ul>
 
+<h2>Required Packages</h2>
 <ul>
 <li>Click</li>
 <li>Requests</li>
 </ul>
 
-<h2>Cómo instalar</h2>
-1. Clonar el repositorio de GitHub: <br>
-<code>git clone https://github.com/aitorTD/pandora_test.git</code>
-<br><br>
-2. Instalar los paquetes requeridos:<br>
+<h2>Installation</h2>
+1. Clone the GitHub repository:<br>
+<code>git clone https://github.com/aitorTD/pandora_test.git</code><br>
+<code>cd pandora_test</code><br><br>
+2. Install required packages:<br>
+<code>python -m pip install --upgrade pip</code><br>
 <code>pip install -r requirements.txt</code>
 
-<h2>Cómo ejecutar</h2>
-<code>python cli.py --mode modo --photos número_de_fotos </code>
+<h2>How to Run</h2>
+<code>python cli.py --mode mode --photos number_of_photos</code>
 <br><br>
-Donde <code>modo</code> puede ser:
+Where <code>mode</code> can be:
 <ul>
-<li>secuencial</li>
-<li>multihilo</li>
-<li>multiprocesos</li>
+<li>sequential</li>
+<li>multithread</li>
+<li>multiprocess</li>
 </ul>
 <br>
-Y <code>número_de_fotos</code> puede ser un número entero positivo, o dejarlo en blanco para que se descarguen todas las fotos.
+And <code>number_of_photos</code> can be a positive integer, or leave it blank to download all photos.
 <br>
-<h4>Ejemplo de uso:</h4>
-Para ejecutar el programa en modo secuencial y mostrar 2 fotos, utiliza:
+<h4>Usage Example:</h4>
+To run the program in sequential mode and display 2 photos, use:
 <br>
-<code>python cli.py --mode secuencial --photos 2</code>
+<code>python cli.py --mode sequential --photos 2</code>
 <br><br>
-<stong>Resultado esperado:</strong>
+<strong>Expected Output:</strong>
 <br>
-<code>Modo de ejecucion: Secuencial<br>
+<code>Execution mode: Sequential<br>
 Success receiving data<br>
 Pic ID: 1<br>
 Title: Accusamus Beatae Ad Facilis Cum Similique Qui Sunt<br>
